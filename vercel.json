@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "bot.py",   // Update this to the filename of your Python bot script
+      "use": "@vercel/python",  // Use the official Vercel Python builder
+      "config": {
+        "maxLambdaSize": "2048",  // Set the maximum size for the Lambda function
+        "requirements": "requirements.txt"  // Specify the path to your requirements.txt file
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/bot.py" }  // Update this to the filename of your Python bot script
+  ]
+}
